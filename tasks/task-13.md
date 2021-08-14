@@ -2,7 +2,8 @@ Description
 ---
 - Create a project 
 
-- Create a database from docker image 
+- Create a database from docker image but no deployment config
+- Create a database from docker image with deployment config
 
 # Create a Project 
 ```
@@ -48,7 +49,7 @@ oc logs <podname>
 
 ![image](https://user-images.githubusercontent.com/26741425/129456764-a6eab1d1-c792-4825-92cb-9a1b204f9ca2.png)
 
-# Check newly created deployment 
+## Check newly created deployment 
 
 ```
 oc get deployment 
@@ -61,7 +62,7 @@ oc describe deployment <deployment name>
 ![image](https://user-images.githubusercontent.com/26741425/129456877-89b8a01f-186e-447c-85e3-9b714b9b41dc.png)
 
 
-# Check newly created Service 
+## Check newly created Service 
 
 ```
 oc get service
@@ -72,3 +73,31 @@ oc describe service <service name>
 ```
 
 ![image](https://user-images.githubusercontent.com/26741425/129456832-74c7e257-9a90-4561-ba9b-81ac7549b2e8.png)
+
+
+## Delete app
+
+```
+oc delete all --all
+```
+![image](https://user-images.githubusercontent.com/26741425/129456949-9b01a0aa-01b2-4c45-a427-fa1714f7ee9b.png)
+
+
+# Create app with deployment config
+
+```
+oc new-app --name mysql-1 --docker-image=registry.access.redhat.com/rhscl/mysql-57-rhel7:latest -e MYSQL_USER=user1 -e MYSQL_PASSWORD=pa55 -e MYSQL_ROOT_PASSWORD=rootpa55 -e MYSQL_DATABASE=testdb --as-deployment-config 
+```
+
+![image](https://user-images.githubusercontent.com/26741425/129456975-83fe927e-f387-4f84-82cd-59e02eae3264.png)
+ There will be no deployment but deploymet config 
+ 
+ ```
+ oc describe dc <deployment config name>
+ ```
+ 
+ ```
+ oc describe dc mysql-1
+ ```
+ 
+ ![image](https://user-images.githubusercontent.com/26741425/129456996-d17c1760-014f-4c49-bedc-2fc5ed8ecc7e.png)
