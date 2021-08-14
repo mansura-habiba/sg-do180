@@ -18,11 +18,6 @@ podman login -u <username> -p <password> registry.access.redhat.com
 ## search
 
 ```
-podman search bitnami
-```
-
-
-```
 podman search nginx
 ```
 
@@ -31,6 +26,13 @@ podman search nginx
 ```
 podman run -d --name mynginx <registry url>/<location>/<image name>:<tag>
 ```
+### Example 
+
+```
+podman run -d --name mynginx  bitnami/nginx
+```
+
+
 ![image](https://user-images.githubusercontent.com/26741425/129452905-6aa0ca1f-c3f5-4347-801b-082178a87c65.png)
 
 
