@@ -74,6 +74,14 @@ oc describe service <service name>
 
 ![image](https://user-images.githubusercontent.com/26741425/129456832-74c7e257-9a90-4561-ba9b-81ac7549b2e8.png)
 
+At this moment, this service is not exposed. 
+
+```
+oc expose service <service name >
+```
+
+![image](https://user-images.githubusercontent.com/26741425/129457089-bd4970ca-2899-4c42-95f2-5e44174b2e2b.png)
+
 
 ## Delete app
 
