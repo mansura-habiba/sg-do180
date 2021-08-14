@@ -5,6 +5,20 @@ Task 8 is about Decoupling Information.
 - use a mysql image, make sure that the /var/lib/mysql directory in the container is mounted on a Persistent Volume Claim,
 - and provide variables that are required to start the application in an efficient way.
 
+# Check template process
+
+# Create database from template 
+
+```
+oc new-app --template=mariadb-persistent -p MYSQL_USER=bob -p MYSQL_PASSWORD=secret -p MYSQL_DATABSE_NAME=books-p MYSQL_ROOT_PASSWORD=secret
+```
+
+# Check
+
+```
+oc get all -selector app=mysql
+```
+
 
 # provide variables that are required to start the application in an efficient way
 
