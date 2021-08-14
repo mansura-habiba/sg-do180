@@ -36,7 +36,7 @@ podman run -d --name mynginx  bitnami/nginx
 ![image](https://user-images.githubusercontent.com/26741425/129452905-6aa0ca1f-c3f5-4347-801b-082178a87c65.png)
 
 
-# add the file /tmp/hello, and ensure the changes to the image are saved
+# Add the file /tmp/hello, and ensure the changes to the image are saved
 
 ## check container is running
 
@@ -54,6 +54,8 @@ podman exec -it mynginx sh
 echo "Hello" > /tmp/hello
 ```
 ![image](https://user-images.githubusercontent.com/26741425/129452921-c1636cad-d86f-477b-87bf-13c541313c90.png)
+
+# Commit the changes in the image
 
 ```
 podman commit -a <name> mynginx localhost://mynginx:v1.0
