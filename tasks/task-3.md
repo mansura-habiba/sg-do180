@@ -58,6 +58,10 @@ echo "Hello" > /tmp/hello
 # Commit the changes in the image
 
 ```
+podman commit <old image name>:<old image tag> <new image name>:<new image tag> 
+```
+## Example
+```
 podman commit -a <name> mynginx localhost://mynginx:v1.0
 ```
 
