@@ -31,6 +31,7 @@ podman search nginx
 ```
 podman run -d --name mynginx <registry url>/<location>/<image name>:<tag>
 ```
+![image](https://user-images.githubusercontent.com/26741425/129452905-6aa0ca1f-c3f5-4347-801b-082178a87c65.png)
 
 
 # add the file /tmp/hello, and ensure the changes to the image are saved
@@ -48,16 +49,37 @@ podman exec -it mynginx sh
 ```
 
 ```
-touch /tmp/hello
+echo "Hello" > /tmp/hello
 ```
+![image](https://user-images.githubusercontent.com/26741425/129452921-c1636cad-d86f-477b-87bf-13c541313c90.png)
 
 ```
 podman commit -a <name> mynginx localhost://mynginx:v1.0
 ```
+
+![image](https://user-images.githubusercontent.com/26741425/129452948-cc63b73f-74ef-4672-9e8c-0b379d57780a.png)
+
+
+
+
 # save the modified image to a tar archive
+
 ```
 podman save -o <tar file> localhost://mynginx:v1.0
 ```
+
+```
+podman save > <tar file> localhost://mynginx:v1.0
+```
+
+![image](https://user-images.githubusercontent.com/26741425/129452985-4fdb9235-9f7e-464e-9810-8d23548c2b44.png)
+
+
+## help
+![image](https://user-images.githubusercontent.com/26741425/129452974-d8737cc1-e32e-4125-9ecd-dbc21e80ac34.png)
+
+
+
 # remove the image from the local image list
 ## stop container
 
@@ -76,8 +98,22 @@ podman rm mynginx
 ```
 podman rmi <registry url>/<location>/<image name>:<tag>
 ```
+
+
+
 # restore the backup that you previously created
 
 ```
+pdoman load -i <tar file>
+```
+![image](https://user-images.githubusercontent.com/26741425/129453027-2a2e3cf3-afa1-47c3-9b85-3f8e1322f9d5.png)
+
+## load help
+![image](https://user-images.githubusercontent.com/26741425/129453013-ba3e5988-a490-4109-b425-6072c97a73d1.png)
+
+
+# Check if the container is runninn 
+```
 podman run -d --name mynginx localhost://<location>/mynginx:v1.0
 ```
+![image](https://user-images.githubusercontent.com/26741425/129453044-8ea1ba03-4c3c-4489-982d-e845d5e0c5c4.png)
