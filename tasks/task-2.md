@@ -111,7 +111,6 @@ podman run -d --name <container name> -p <from port>:<to port> -e Key1=value1 -e
 ```
 podman ps -a
 ```
-![image](https://user-images.githubusercontent.com/26741425/129452754-79fd1507-12cd-4220-9923-b0afc6cdaf60.png)
 
 
 ![image](https://user-images.githubusercontent.com/26741425/129452771-16abadf7-a876-4d10-9fe7-7128c7c2dabe.png)
