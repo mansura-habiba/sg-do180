@@ -29,7 +29,7 @@ sudo chown 27:27 -R /srv/mysql
 # start from mysql container
 
 ```
-podman run -d --name mysql-1 -p 130306:30306 -v /srv/mysql:/var/lib/mysql \
-       -e MYSQL_USERNAME=user1 -e MYSQL_PASSWORS=user1 -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATBASE=books
+podman run -d --name mysql-1 -p 30306:3306 -v /srv/mysql:/var/lib/mysql \
+       -e MYSQL_USERNAME=user1 -e MYSQL_PASSWORD=user1 -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATBASE=books
         image url:tag  
 ```
