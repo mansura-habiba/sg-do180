@@ -1,0 +1,11 @@
+Description
+---
+- Create a project 
+
+- Create a database from docker image 
+
+# Create a Project 
+```
+oc new-project task13
+```
+
