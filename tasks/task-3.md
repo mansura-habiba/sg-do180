@@ -120,7 +120,7 @@ pdoman load -i <tar file>
 ![image](https://user-images.githubusercontent.com/26741425/129453013-ba3e5988-a490-4109-b425-6072c97a73d1.png)
 
 
-# Check if the container is runninn 
+# Create container from new image
 ```
 podman run -d --name mynginx localhost://<location>/mynginx:v1.0
 ```
