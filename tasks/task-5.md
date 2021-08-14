@@ -17,4 +17,27 @@ CMD ["nmap", "-sn" , "172.17.0.0/24"]
 ```
 
 
-``
+# Build 
+```
+podman build -h
+```
+
+![image](https://user-images.githubusercontent.com/26741425/129453439-0f0e0960-3387-46a5-b005-2108c14222c8.png)
+
+```
+podman build -t <imagename> .
+```
+
+## Check 
+
+```
+podman images
+```
+
+# Run 
+
+```
+podman run -d --name <container name> localhost://<image name>
+```
+
+
