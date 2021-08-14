@@ -121,7 +121,13 @@ pdoman load -i <tar file>
 
 
 # Create container from new image
+## get the new image name 
+
 ```
-podman run -d --name mynginx localhost://<location>/mynginx:v1.0
+podman images
+```
+Copy image name for next command 
+```
+podman run -d --name mynginx-2 <local new image name>
 ```
 ![image](https://user-images.githubusercontent.com/26741425/129453044-8ea1ba03-4c3c-4489-982d-e845d5e0c5c4.png)
