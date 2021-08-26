@@ -19,7 +19,7 @@ sudo semanage fcontext -a -t container_file_t "/srv/mysql(/.*)?"
 ```
 
 ```
-sudo restorecon -R "/srv/mysql(/.*)?"
+sudo restorecon -R "/srv/mysql"
 ```
 # Give mysqld permisssion to execute
 

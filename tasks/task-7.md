@@ -23,7 +23,7 @@ oc create deploy myapp --image=bitnami/nginx --dry-run=client -o yaml > myapp.ya
 # Check 
 
 ```
-oc create -f m,yapp.yaml
+oc create -f myapp.yaml
 ```
 
 # Expose
