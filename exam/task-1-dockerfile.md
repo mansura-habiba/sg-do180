@@ -33,6 +33,8 @@ FROM jboss/base-jdk:11
 ENV JBOSS_VERSION 24.0.7.Final
 
 ENV JBOSS_HOME /opt/jboss/
+# No need the following env
+ENV WILDFLY_SHA1 751e3ff9128a6fbe72016552a9b864f729a710cc
 
 USER root
 
@@ -40,6 +42,15 @@ USER root
 
 ADD jboss.24.0.7.Final.zip ${JBOSS_HOME}
 RUN unzip ${JBOSS_HOME}/jboss.24.0.7.Final.zip
+
+# In exam the distribution will be availble so no need the following command
+
+RUN cd $HOME \
+    && curl -O https://download.jboss.org/wildfly/$JBOSS_VERSION/wildfly-$JBOSS_VERSION.tar.gz \
+    && sha1sum wildfly-$JBOSS_VERSION.tar.gz | grep $WILDFLY_SHA1 \
+    && tar xf wildfly-$JBOSS_VERSION.tar.gz \
+    && mv $HOME/wildfly-$JBOSS_VERSION $JBOSS_HOME \
+    && rm wildfly-$JBOSS_VERSION.tar.gz \
 
 # Make sure the distribution is available from a well-known place
 RUN cd $HOME \
