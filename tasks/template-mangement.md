@@ -6,7 +6,9 @@ Task 8 is about Decoupling Information.
 - and provide variables that are required to start the application in an efficient way.
 
 # Check template process
-
+```
+oc get template mariadb-persistent -n openshift
+```
 # Create database from template 
 
 ```
